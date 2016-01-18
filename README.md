@@ -1,7 +1,7 @@
 OpenStack Golang Client
 =======================
 
-NOTE(christof fetzer): The orginal client hat several resource leaks (defer called
+NOTE(christof fetzer): The orginal client has/had several resource leaks ("defer" is called
 too late). I fixed the leaks that I could find and modified the import path to point
 to the forked repository.
  

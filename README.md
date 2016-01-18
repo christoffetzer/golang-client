@@ -1,6 +1,11 @@
 OpenStack Golang Client
 =======================
 
+NOTE(christof fetzer): The orginal client hat several resource leaks (defer called
+too late). I fixed the leaks that I could find and modified the import path to point
+to the forked repository.
+ 
+
 NOTE(dtroyer) Apr 2015: This repo is under heavy revision as it is being revived.
 
 `stackforge/golang-client` is an implementation of [OpenStack]

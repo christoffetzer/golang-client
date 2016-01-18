@@ -19,6 +19,7 @@ import (
 	"bytes"
 	"crypto/tls"
 	"io"
+    "time"
 	// "io/ioutil"
 	"log"
 	"net/http"
@@ -49,7 +50,8 @@ func NewSession(hclient *http.Client, auth AuthRef, tls *tls.Config) (session *S
 			TLSClientConfig:    tls,
 			DisableCompression: true,
 		}
-		hclient = &http.Client{Transport: tr}
+		// hclient = &http.Client{Transport: tr} CF
+		hclient = &http.Client{Transport: tr, Timeout: 10*time.Second}  // CF
 	}
 	session = &Session{
 		httpClient: hclient,

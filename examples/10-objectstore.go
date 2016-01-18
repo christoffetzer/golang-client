@@ -22,8 +22,8 @@ import (
 	"net/http"
 	"time"
 
-	"git.openstack.org/stackforge/golang-client.git/objectstorage/v1"
-	"git.openstack.org/stackforge/golang-client.git/openstack"
+	"github.com/christoffetzer/golang-client/objectstorage/v1"
+	"github.com/christoffetzer/golang-client/openstack"
 )
 
 func main() {

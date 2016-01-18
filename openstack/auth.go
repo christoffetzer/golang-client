@@ -81,7 +81,7 @@ func DoAuthRequest(authopts AuthOpts) (AuthRef, error) {
 	if err != nil {
 		return nil, err
 	}
-    defer resp.Body.Close() // CF
+	defer resp.Body.Close() // CF
 
 	contentType := strings.ToLower(resp.Header.Get("Content-Type"))
 	if strings.Contains(contentType, "json") != true {

@@ -93,7 +93,7 @@ func ListObjects(session *openstack.Session, limit int64,
 	if err != nil {
 		return nil, err
 	}
-    defer resp.Body.Close() // CF
+	defer resp.Body.Close() // CF
 	if err = util.CheckHTTPResponseStatusCode(resp); err != nil {
 		return nil, err
 	}
@@ -113,7 +113,7 @@ func PutObject(session *openstack.Session, fContent *[]byte, url string, headers
 	if err != nil {
 		return err
 	}
-    defer resp.Body.Close() // CF
+	defer resp.Body.Close() // CF
 	return util.CheckHTTPResponseStatusCode(resp)
 }
 
@@ -127,8 +127,8 @@ func CopyObject(session *openstack.Session, srcURL, destURL string) (err error) 
 	if err != nil {
 		return err
 	}
-    defer resp.Body.Close() // CF
-    return util.CheckHTTPResponseStatusCode(resp)
+	defer resp.Body.Close() // CF
+	return util.CheckHTTPResponseStatusCode(resp)
 }
 
 //DeleteObject calls the OpenStack delete object API using
@@ -144,8 +144,8 @@ func DeleteObject(session *openstack.Session, url string) (err error) {
 	if err != nil {
 		return err
 	}
-    defer resp.Body.Close() // CF
-    return util.CheckHTTPResponseStatusCode(resp)
+	defer resp.Body.Close() // CF
+	return util.CheckHTTPResponseStatusCode(resp)
 }
 
 //SetObjectMeta calls the OpenStack API to create/update meta data for
@@ -156,7 +156,7 @@ func SetObjectMeta(session *openstack.Session, url string, headers http.Header) 
 	if err != nil {
 		return err
 	}
-    defer resp.Body.Close() // CF
+	defer resp.Body.Close() // CF
 	return util.CheckHTTPResponseStatusCode(resp)
 }
 
@@ -167,7 +167,7 @@ func GetObjectMeta(session *openstack.Session, url string) (http.Header, error) 
 	if err != nil {
 		return nil, err
 	}
-    defer resp.Body.Close() // CF  ??
+	defer resp.Body.Close() // CF  ??
 	return resp.Header, util.CheckHTTPResponseStatusCode(resp)
 }
 
@@ -183,7 +183,7 @@ func GetObject(session *openstack.Session, url string) (http.Header, []byte, err
 	if err != nil {
 		return nil, nil, err
 	}
-    defer resp.Body.Close() // CF
+	defer resp.Body.Close() // CF
 	if err = util.CheckHTTPResponseStatusCode(resp); err != nil {
 		return nil, nil, err
 	}
